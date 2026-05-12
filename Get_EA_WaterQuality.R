@@ -15,7 +15,7 @@
 
 ## n.b. The primary example here is for downloading data at regional scales, but additional examples will be added in time, e.g. 
 # Sub-areas
-# Enviroment Agency sampling locations
+# Environment Agency sampling locations
 # Radius around coordinates
 
 ## Last updated: 2026-01-06
@@ -186,7 +186,9 @@ wq_data <- lapply(df_list, function(x) {
   x %>% 
     select(-c(id, determinand.notation, determinand.prefLabel, unit))
 }) %>% 
-  reduce(full_join)
+  reduce(full_join) %>% 
+  arrange(samplingPoint.region, samplingPoint.area, samplingPoint.subArea, samplingPoint.prefLabel, Date) %>% 
+  relocate(Date)
 
 ### Export the dataset as a CSV
 write_csv(wq_data, "FILENAME.csv")
