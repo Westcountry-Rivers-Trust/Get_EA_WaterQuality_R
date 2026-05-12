@@ -116,11 +116,11 @@ getdata_eawq <- function(area, determinand, start_date, end_date){
 ## Two example options are given here, but there are probably more options for precannedArea. However, they are not fully documented/published.
 ## It is also possible to use a GeoJSON polygon for your area of interest instead of precannedArea.
 
-# For an Environment Agency/Natural England area, use "environment_agency,[CODE]" 
+# For an Environment Agency/Natural England area, use "environment_agency,[CODE]", e.g. "environment_agency,DCS"
 # https://naturalengland-defra.opendata.arcgis.com/maps/administrative-boundaries-environment-agency-and-natural-england-public-face-areas/explore
 area <- "environment_agency,DCS"
 
-# For local authority areas, use "local_authority,[CODE]"
+# For local authority areas, use "local_authority,[CODE]", e.g. "local_authority,E06000002"
 # https://www.ons.gov.uk/aboutus/transparencyandgovernance/freedomofinformationfoi/lookuptableforukauthoritycodes2024
 area <- "local_authority,E06000002"
 
@@ -128,8 +128,8 @@ area <- "local_authority,E06000002"
 ### Date range
 ## Make sure you follow this format: "YYYY-MM-DD", or use Sys.Date() for today's date.
 ## Sys.Date() can also be modified for time relative to the present, e.g. Sys.Date()-7 is a week ago.
-start_date <- as.Date("2024-01-01")
-end_date <- as.Date("2024-12-31")
+start_date <- as.Date("2025-01-01")
+end_date <- as.Date("2025-12-31")
 
 
 
@@ -258,8 +258,8 @@ location <- "NE-45100054"
 ### Date range
 ## Make sure you follow this format: "YYYY-MM-DD", or use Sys.Date() for today's date.
 ## Sys.Date() can also be modified for time relative to the present, e.g. Sys.Date()-7 is a week ago.
-start_date <- as.Date("2024-01-01")
-end_date <- as.Date("2024-12-31")
+start_date <- as.Date("2025-01-01")
+end_date <- as.Date("2025-12-31")
 
 
 # Temp Water; Temperature of Water
