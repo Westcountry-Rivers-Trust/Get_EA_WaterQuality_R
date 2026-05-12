@@ -126,6 +126,8 @@ area <- "local_authority,E06000002"
 
 
 ### Date range
+## Make sure you follow this format: "YYYY-MM-DD", or use Sys.Date() for today's date.
+## Sys.Date() can also be modified for time relative to the present, e.g. Sys.Date()-7 is a week ago.
 start_date <- as.Date("2024-01-01")
 end_date <- as.Date("2024-12-31")
 
@@ -254,6 +256,8 @@ getdata_eawq_loc <- function(location, determinand, start_date, end_date){
 location <- "NE-45100054"
 
 ### Date range
+## Make sure you follow this format: "YYYY-MM-DD", or use Sys.Date() for today's date.
+## Sys.Date() can also be modified for time relative to the present, e.g. Sys.Date()-7 is a week ago.
 start_date <- as.Date("2024-01-01")
 end_date <- as.Date("2024-12-31")
 
