@@ -220,7 +220,7 @@ write_csv(wq_data, "FILENAME.csv")
 
 
 ## If you want data from just one Environment Agency sampling point:
-getdata_eawq_loc <- function(location, determinand, start_date, end_date){
+getdata_eawq_point <- function(point, determinand, start_date, end_date){
   
   # Generate sequence of month starts
   month_starts <- seq(start_date, end_date, by = "month")
@@ -239,7 +239,7 @@ getdata_eawq_loc <- function(location, determinand, start_date, end_date){
     response <- POST(
       "https://environment.data.gov.uk/water-quality/data/observation?",
       query = list(
-        pointNotation = location,  
+        pointNotation = point,  
         #precannedArea = area, 
         determinand = determinand, 
         dateFrom = format(month_starts[i], "%Y-%m-%d"),
@@ -275,7 +275,7 @@ getdata_eawq_loc <- function(location, determinand, start_date, end_date){
 #### Worked example
 
 ### EA sampling point
-location <- "NE-45100054"
+point <- "NE-45100054"
 
 ### Date range
 ## Make sure you follow this format: "YYYY-MM-DD", or use Sys.Date() for today's date.
@@ -286,7 +286,7 @@ end_date <- as.Date("2025-12-31")
 
 # Temp Water; Temperature of Water
 temp <- getdata_eawq_loc(
-  location=location, 
+  point=point, 
   determinand="0076",
   start_date=start_date, 
   end_date=end_date
