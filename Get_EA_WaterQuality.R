@@ -13,12 +13,13 @@
 # 0180; Orthophospht; Orthophosphate, reactive as P
 # 6396; TurbidityNTU; Turbidity
 
-## n.b. The primary example here is for downloading data at regional scales, but additional examples will be added in time, e.g. 
+## Scroll down for a further example showing how to get data for a specific sampling location.
+
+## Additional examples may be added in time, e.g. 
 # Sub-areas
-# Environment Agency sampling locations
 # Radius around coordinates
 
-## Last updated: 2026-01-06
+## Last updated: 2026-10-28
 ## Author: Francis Rowney
 
 
@@ -165,6 +166,16 @@ phos <- getdata_eawq(
   rename(`Orthophospht` = result)
 
 
+# Nitrate-N;	Nitrate as N
+nitr <- getdata_eawq(
+  area=area, 
+  determinand="0117",
+  start_date=start_date, 
+  end_date=end_date
+) %>% 
+  rename(`Nitrate-N` = result)
+
+
 # TurbidityNTU;	Turbidity
 turb <- getdata_eawq(
   area=area, 
@@ -175,11 +186,20 @@ turb <- getdata_eawq(
   rename(`TurbidityNTU` = result)
 
 
+# Sld Sus@105C; Solids, Suspended at 105 C
+sld <- getdata_eawq(
+  area=area, 
+  determinand="0135",
+  start_date=start_date, 
+  end_date=end_date
+) %>% 
+  rename(`Sld Sus@105C` = result)
+
 
 #### Join the data frames together and export as CSV 
 
 ### Create a list of the data frames
-df_list <- list(temp, cond, phos, turb)
+df_list <- list(temp, cond, phos, nitr, turb, sld)
 
 ### Remove columns that are specific to determinands and join the data frames
 wq_data <- lapply(df_list, function(x) {
