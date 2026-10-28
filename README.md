@@ -1,5 +1,5 @@
 # Get_EA_WaterQuality_R
-A short R script to help get data from the Environment Agency Water Quality API using a custom function.
+A short R script to help get data from the Environment Agency Water Quality API using a custom function. (Equivalent methods for Python, PowerQuery, etc, can be suggested by copying the script into your preferred AI chat bot.)
 
 ## API Info
 Water Quality Explorer API Users' Guide: https://gist.github.com/canwaf/2afa25fc6160efb25ac72b7acd60278d
